@@ -1,6 +1,7 @@
 package com.example.dogspath.activity.activity.adaptor;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,10 +43,20 @@ public class TextListAdaptor extends RecyclerView.Adapter<TextListAdaptor.ViewHo
         final ImageUpload imageUpload = list.get(position);
 
         if (imageUpload.getTitle() != null && imageUpload.getSubPaths() != null) {
-          holder.textView.setText(imageUpload.getSubPaths().get(position).getTitle());
+            for(int i=0;i<imageUpload.getSubPaths().size();i++)
+            {
+
+                holder.textView.setText(imageUpload.getSubPaths().get(i).getTitle());
+            }
+
         }
-      /*  ImageViewPagerAdaptor viewPagerAdaptor = new ImageViewPagerAdaptor(context,imageUpload.getSubPaths());
-        holder.listViewPager.setAdapter(viewPagerAdaptor);*/
+        holder.textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
     }
 

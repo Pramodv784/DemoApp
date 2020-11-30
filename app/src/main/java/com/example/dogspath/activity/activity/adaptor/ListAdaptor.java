@@ -44,16 +44,17 @@ public class ListAdaptor extends RecyclerView.Adapter<ListAdaptor.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ListAdaptor.ViewHolder holder, int position) {
         final ImageUpload imageUpload = list.get(position);
-
         if (imageUpload.getTitle() != null && imageUpload.getSubPaths() != null) {
             holder.tittleTV.setText(imageUpload.getTitle());
             holder.subTittleTV.setText(String.valueOf(imageUpload.getSubPaths().size()) + "  Sub Paths");
         }
         ImageViewPagerAdaptor viewPagerAdaptor = new ImageViewPagerAdaptor(context,imageUpload.getSubPaths());
         holder.listViewPager.setAdapter(viewPagerAdaptor);
+
         TextListAdaptor textListAdaptor = new TextListAdaptor(context,imagelist,list);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context,RecyclerView.HORIZONTAL,false));
         holder.recyclerView.setAdapter(textListAdaptor);
+
 
     }
 
