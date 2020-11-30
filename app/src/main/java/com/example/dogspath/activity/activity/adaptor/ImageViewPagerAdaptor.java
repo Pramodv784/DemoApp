@@ -41,9 +41,11 @@ public class ImageViewPagerAdaptor extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         View viewitem = layoutInflater.inflate(R.layout.imagelist, container, false);
         ImageView imageView = viewitem.findViewById(R.id.image);
-        TextView textView=viewitem.findViewById(R.id.image_title);
+       // TextView textView=viewitem.findViewById(R.id.image_title);
+        //TextView textView1=viewitem.findViewById(R.id.image_title2);
         Glide.with(context).load(subPaths.get(position).getImage()).into(imageView);
-        textView.setText(subPaths.get(position).getTitle());
+        //textView.setText(subPaths.get(position).getTitle());
+        //textView1.setText(subPaths.get(position+1).getTitle());
         Objects.requireNonNull(container).addView(viewitem);
           return viewitem;
     }

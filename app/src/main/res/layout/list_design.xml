@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="300dp"
+    android:layout_height="400dp"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,12 +37,16 @@
             android:textAllCaps="false"
             android:layout_alignParentRight="true"
             android:background="@color/black"
-            android:textColor="@color/light_blue"/>
+            android:textColor="@color/blue"/>
 
     </RelativeLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        android:layout_height="300dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recycle"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

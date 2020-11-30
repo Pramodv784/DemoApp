@@ -15,15 +15,19 @@ import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.facebook.share.Share;
+
+import java.util.jar.Attributes;
 
 
 public class LoginActivity extends AppCompatActivity {
     LoginButton loginButton;
     CallbackManager callbackManager;
     SharedPrefrence yourprefrence;
+    String user_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +41,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 yourprefrence.saveData(ConstantClass.LOGIN_STATUS,"valid");
+
                 startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+
                 Toast.makeText(getApplicationContext(),"Sucessfully",Toast.LENGTH_SHORT).show();
             }
 

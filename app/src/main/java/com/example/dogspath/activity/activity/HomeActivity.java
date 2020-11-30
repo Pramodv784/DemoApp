@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.dogspath.R;
 import com.example.dogspath.activity.activity.adaptor.ListAdaptor;
@@ -29,9 +31,9 @@ ListAdaptor listAdaptor;
         setContentView(R.layout.activity_home);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().getElevation();
-        getSupportActionBar().
         recyclerView=findViewById(R.id.recycle);
 //        recyclerView.hasFixedSize();
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
           init();
     }
@@ -49,13 +51,13 @@ ListAdaptor listAdaptor;
                      Log.i("response","listdata>>"+imagelist);
                  }
                  else {
-
+                     Toast.makeText(getApplicationContext(),"List failed",Toast.LENGTH_SHORT).show();
                  }
             }
 
             @Override
             public void onFailure(Call<ArrayList<ImageUpload>> call, Throwable t) {
-
+                   Toast.makeText(getApplicationContext(),"Please check your internet Connection",Toast.LENGTH_SHORT).show();
             }
         });
     }

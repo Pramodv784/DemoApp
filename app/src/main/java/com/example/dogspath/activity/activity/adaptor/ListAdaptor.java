@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -50,6 +51,9 @@ public class ListAdaptor extends RecyclerView.Adapter<ListAdaptor.ViewHolder> {
         }
         ImageViewPagerAdaptor viewPagerAdaptor = new ImageViewPagerAdaptor(context,imageUpload.getSubPaths());
         holder.listViewPager.setAdapter(viewPagerAdaptor);
+        TextListAdaptor textListAdaptor = new TextListAdaptor(context,imagelist,list);
+        holder.recyclerView.setLayoutManager(new LinearLayoutManager(context,RecyclerView.HORIZONTAL,false));
+        holder.recyclerView.setAdapter(textListAdaptor);
 
     }
 
@@ -61,12 +65,14 @@ public class ListAdaptor extends RecyclerView.Adapter<ListAdaptor.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         ViewPager listViewPager;
         TextView tittleTV, subTittleTV;
+        RecyclerView recyclerView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.listViewPager = (ViewPager) itemView.findViewById(R.id.view_pager);
             this.tittleTV = (TextView) itemView.findViewById(R.id.tv_tittle);
             this.subTittleTV = (TextView) itemView.findViewById(R.id.tv_image_size);
+            this.recyclerView = (RecyclerView) itemView.findViewById(R.id.recycle);
         }
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/dark">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="image_title"
+        android:layout_gravity="center"
+        android:id="@+id/textview"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="10dp"
+        android:drawableRight="@drawable/arrow_icon"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>
